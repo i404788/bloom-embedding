@@ -38,6 +38,7 @@ class BloomEmbed(torch.nn.Module):
     def __init__(self, lut_size: int, vocab_size: int, embed_dim: int, digests=2, validate=True):
         super().__init__()
         assert embed_dim % digests == 0, "Embed_dim should be dividable by digests"
+        assert type(lut_size) == int, "Lut size should be an integer"
         self.key_dim = embed_dim//digests
         self.lut = torch.nn.parameter.Parameter(torch.normal(0., 1/np.sqrt(embed_dim), (lut_size, self.key_dim)))
         self.vocab_size = vocab_size
