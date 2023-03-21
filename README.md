@@ -6,6 +6,11 @@ recommend trying setting `vocab=12` and inputting 13,14,etc it will keep working
 
 Note that on initialization the module validates your configuration exaustively for overlaps (to prevent duplicate tokens mapping to the same exact vectors), to disable set `validate=False`
 
+## Install
+```
+pip install bloom-embedding
+```
+
 ## Example
 
 ```
